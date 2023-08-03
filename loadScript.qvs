@@ -1,0 +1,1746 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;-$#,##0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+
+SysActualYear		=	Date(now(),'YYYY');
+SysLastYear			=	Date(AddYears(SysActualYear,-1),'YYYY');
+SysTwoYearsAgo		=	Date(AddYears(SysActualYear,-2),'YYYY');
+SysTreeYearsAgo		=	Date(AddYears(SysActualYear,-3),'YYYY');
+SysFourYearsAgo		=	Date(AddYears(SysActualYear,-4),'YYYY');
+SysFiverYearsAgo	=	Date(AddYears(SysActualYear,-5),'YYYY');
+SysSixYearsAgo		=	Date(AddYears(SysActualYear,-6),'YYYY');
+SysSevenYearsAgo	=	Date(AddYears(SysActualYear,-7),'YYYY');
+
+
+
+text_connection = If(SubStringCount(DocumentTitle(), 'Full') >= 1, 'NEWEDIT_', 'PROD_');
+
+
+
+
+
+
+
+
+///$tab 1.- Grow, employment and social indicators
+[Value Added in Industry]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value Added in Industry China],
+    [x3val]					AS [Value Added in Industry EU],
+    [x4val]					AS [Value Added in Industry Japan],
+    [x5val]					AS [Value Added in Industry USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_IND.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Value Added in Services]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value Added in Services China],
+    [x3val]					AS [Value Added in Services EU],
+    [x4val]					AS [Value Added in Services Japan],
+    [x5val]					AS [Value Added in Services USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_SER.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Value added by size]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value added by size Micro],
+    [x3val]					AS [Value added by size Small],
+   	[x4val]					AS [Value added by size Medium_Sized],
+    [x5val]					AS [Value added by size Large]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_ENT.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+[GDP per employed]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [GDP per employed EU],
+    [x3val]					AS [GDP per employed UK],
+    [x4val]					AS [GDP per employed USA],
+    [x5val]					AS [GDP per employed Japan]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_PRODUC_EMPL.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of high growth]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Share of high growth Share_EU27]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_GROW_ENT.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Gross fixed capital formation]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Gross fixed capital Japan],
+    [x3val]					AS [Gross fixed capital UK],
+    [x4val]					AS [Gross fixed capital USA],
+    [x5val]					AS [Gross fixed capital EU]
+
+where [x1val] <> 'Years-Quarter';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_GROSS_FIX_FORM.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Employment growth]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Employment growth EU],
+    [x3val]					AS [Employment growth USA],
+    [x4val]					AS [Employment growth Japan],
+    [x5val]					AS [Employment growth UK]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_EMPL_GROW.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Number of persons employed]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Number of persons employed Micro],
+    [x3val]					AS [Number of persons employed Small],
+    [x4val]					AS [Number of persons employed Medium_Sized],
+    [x5val]					AS [Number of persons employed Large]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_EMPL_ENT_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Self-employment]:
+LOAD
+    [x1val]						AS [Year],
+    [x2val]						AS [Self-employment Overall],
+    [x3val]						AS [Self-employment Perm_Employees],
+    [x4val]						AS [Self-employment Temp_Employees],
+    [x5val]						AS [Self-employment Self_Employees]
+
+where [x1val] <> 'Years-Quarter';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_ST_EMPL.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[International comparison]:
+LOAD
+    [x1val]							AS [Year],
+    '2 earner couple, 2 kids'		AS [International comparison Variable],
+    [x2val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+Load
+    [x1val]							AS [Year],
+    '1 earner couple, 2 kids'		AS [International comparison Variable],
+    [x3val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+Load
+    [x1val]							AS [Year],
+    'Single, no kids'				AS [International comparison Variable],
+    [x4val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[EU growth rates]:
+LOAD
+    [x7val]							AS [ISO_code], 
+    [x8val]							AS [EU growth rates Two_Earn_Two_Kids],
+    [x9val]							AS [EU growth rates One_Earn_Two_Kids],
+    [x10val]						AS [EU growth rates Single_None_Kids]
+
+where [x7val] <> 'EU271'and [x8val] <> 'Two earners couple, two kids' and [x7val]<>'' ;
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x7val",
+	"x8val",
+	"x9val",
+	"x10val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Accidents at work]:
+LOAD
+    [x1val]							AS [Year], 
+    [x2val]							AS [Accidents at work EU27],
+    [x3val]							AS [Accidents at work Min],
+    [x4val]							AS [Accidents at work Max]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_HEALTH_SAFE_1.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Work-related health problems]:
+LOAD
+    [x1val]							AS [Year],
+    [x2val]							AS [Work-related health problems EU27],
+    [x3val]							AS [Work-related health problems Min],
+    [x4val]							AS [Work-related health problems Max]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_HEALTH_SAFE_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Employment by gender]:
+LOAD
+    [x1val]							AS [Year],
+    [x2val]							AS [Employment by gender EU27_M],
+    [x3val]							AS [Employment by gender Min_M],
+    [x4val]							AS [Employment by gender Max_M],
+    [x5val]							AS [Employment by gender EU27_F],
+    [x6val]							AS [Employment by gender Min_F],
+    [x7val]							AS [Employment by gender Max_F],
+    [x8val]							AS [Employment by gender EU27_Gap]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_GENDER.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val",
+	"x6val",
+	"x7val",
+	"x8val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+ALLMETRICS_Year_Employment:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA]
+Resident [Value Added in Industry];
+left join
+LOAD
+    [Year],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA]
+Resident [Value Added in Services];
+outer join
+LOAD
+    [Year],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large]
+Resident [Value added by size];
+outer join
+LOAD
+    [Year],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan]
+Resident [GDP per employed];
+left join
+LOAD
+    [Year],
+    [Share of high growth Share_EU27]
+Resident [Share of high growth];
+outer join
+LOAD
+    [Year],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU]
+Resident [Gross fixed capital formation];
+outer join
+LOAD
+    [Year],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK]
+Resident [Employment growth];
+left join
+LOAD
+    [Year],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large]
+Resident [Number of persons employed];
+outer join
+LOAD
+    [Year],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees]
+Resident [Self-employment];
+outer join
+LOAD
+    [Year],
+    [International comparison Variable],
+    [International comparison data]
+Resident [International comparison];
+left join
+LOAD
+    [Year],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max]
+Resident [Accidents at work];
+left join
+LOAD
+    [Year],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max]
+Resident [Work-related health problems];
+left join
+LOAD
+    [Year],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap]
+Resident [Employment by gender];
+
+
+
+
+Drop Table [Value Added in Industry], [Value Added in Services], [Value added by size], [GDP per employed], [Share of high growth], [Gross fixed capital formation], [Employment growth], [Number of persons employed];
+Drop Table [Self-employment], [International comparison], [Accidents at work], [Work-related health problems], [Employment by gender];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///$tab 2.- Integration of goods and services
+[EU trade integration in goods]:
+LOAD
+	[x1val] 				AS [ISO_code],
+	num([y1val]) 			AS [EU lavels trade integration in goods 1], 
+	num([y2val]) 			AS [EU lavels trade integration in goods 2],
+	num([y3val]) 			AS [EU lavels trade integration in goods 3]
+
+where [x1val] <> 'year' and [x1val] <> 'Avg' and [x1val] <> 'UK';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-MO_TRA_IN_GOO_AND_SERV_INT_GOO_1.csv';
+
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[EU trade integration in services]:
+LOAD
+	[x1val] 				AS [ISO_code],
+	num([y1val]) 			AS [EU lavels trade integration in services 1], 
+	num([y2val]) 			AS [EU lavels trade integration in services 2], 
+	num([y3val]) 			AS [EU lavels trade integration in services 3] 
+    
+where [x1val] <> 'year' and [x1val] <> '' and [x1val] <> 'Avg' and [x1val] <> 'UK';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Exports of goods]:
+LOAD
+    [x1val] 				AS [ISO_code],
+    [x2val] 				AS [Exports of goods LastYear],
+    [y1val] 				AS [Exports of goods OldDate]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_INT_EU_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Trade within the EU]:
+LOAD
+    [x3val] 				AS [Year],
+    [x4val] 				AS [Trade within the EU ExtraTrade],
+    [x5val] 				AS [Trade within the EU IntraTrade]
+
+where [x3val] <> '_month';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_INT_EU_TRA.csv';
+
+SQL SELECT 
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Price convergence: general trend]:
+LOAD
+    [x1val] 				AS [Year],
+    [x2val] 				AS [Price convergence EuArea],
+    [x3val] 				AS [Price convergence Eu]
+
+where [x1val] <> 'GEO/TIME1' and [x1val] <> 'GEO/TIME';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_PRI_CON_1.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Price convergence: average growth rates]:
+LOAD
+    [x1val] 				AS [Year],
+    [x2val] 				AS [Price convergence YearsRange1],
+    [x3val] 				AS [Price convergence YearsRange2]
+
+where [x1val] <> 'Range';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_PRI_CON_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source"; 
+
+
+
+
+
+ALLMETRICS_ISO_Employment_Integration:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3]
+Resident [EU trade integration in goods];
+left join
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3]
+Resident [EU trade integration in services];
+outer join
+LOAD
+    [ISO_code],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate]
+Resident [Exports of goods];
+// --------------------------------------------------------------
+// Only one table from section (1)
+left Join
+LOAD
+    [ISO_code],
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids]
+Resident [EU growth rates];
+
+
+Drop Table [EU growth rates], [EU trade integration in goods], [EU trade integration in services], [Exports of goods];
+
+
+ALLMETRICS_Year_Employment_Integration:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap]
+Resident [ALLMETRICS_Year_Employment];
+// --------------------------------------------------------------
+outer Join
+LOAD
+    [Year],
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade]
+Resident [Trade within the EU];
+outer join
+LOAD
+    [Year],
+    [Price convergence EuArea],
+    [Price convergence Eu]
+Resident [Price convergence: general trend];
+outer join
+LOAD
+    [Year],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2]
+Resident [Price convergence: average growth rates];    
+    
+
+Drop Table ALLMETRICS_Year_Employment, [Trade within the EU], [Price convergence: general trend], [Price convergence: average growth rates];
+
+
+
+
+
+///$tab 3.- Economic resilience
+[Net public investment]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [Net public investment EU],
+    [x3val]				AS [Net public investment UK],
+    [x4val]				AS [Net public investment USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_NET_PUB_INV.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+[Net private investment]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [Net private investment EU],
+    [x3val]				AS [Net private investment UK],
+    [x4val]				AS [Net private investment USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_NET_PRIV_INV.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+[R&D expenditure]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [R&D expenditure China],
+    [x3val]				AS [R&D expenditure EU],
+    [x4val]				AS [R&D expenditure UK],
+    [x5val]				AS [R&D expenditure Japan],
+    [x6val]				AS [R&D expenditure USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_R_I_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val",
+	"x6val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of EU SMEs]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [Share of EU SMEs EU27]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_STEM_PROD_INNOV.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Global market share in medium and high technology manufacturing]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [Global market share M_H_Tech China],
+   	[x3val]				AS [Global market share M_H_Tech EU],
+    [x4val]				AS [Global market share M_H_Tech Japan],
+    [x5val]				AS [Global market share M_H_Tech UK],
+    [x6val]				AS [Global market share M_H_Tech USA]
+
+where [x1val] <> 'Years' and ([x2val]<>'null' or [x3val]<>'null' or [x4val]<>'null' or [x5val]<>'null' or [x6val]<>'null');	
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_HIGH_TECH_MANUF.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val",
+	"x6val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Global market share in high technology exports]:
+LOAD
+    [x1val]				AS [Year],
+    [x2val]				AS [Global market share H_Tech China],
+    [x3val]				AS [Global market share H_Tech EU],
+    [x4val]				AS [Global market share H_Tech Japan],
+    [x5val]				AS [Global market share H_Tech UK],
+    [x6val]				AS [Global market share H_Tech USA]
+
+where [x1val] <> 'Years' and ([x2val]<>'null' or [x3val]<>'null' or [x4val]<>'null' or [x5val]<>'null' or [x6val]<>'null');	
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_HIGH_TECH_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val",
+	"x6val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Strategic dependency]:
+LOAD
+    [x1val]				AS [ISO_code],
+    [y1val]				AS [Strategic dependency LastYear]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_ECO_RES_CONC_RAW_MAT.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+ALLMETRICS_ISO_Employment_Integration_Economic:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate],
+// --------------------------------------------------------------
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids]
+Resident [ALLMETRICS_ISO_Employment_Integration];
+// --------------------------------------------------------------
+outer Join
+LOAD
+    [ISO_code],
+    [Strategic dependency LastYear]
+Resident [Strategic dependency];
+
+Drop Table [Strategic dependency], [ALLMETRICS_ISO_Employment_Integration];
+
+
+
+
+
+ALLMETRICS_Year_Employment_Integration_Economic:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap],
+// --------------------------------------------------------------
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade],
+    [Price convergence EuArea],
+    [Price convergence Eu],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2]
+Resident [ALLMETRICS_Year_Employment_Integration];
+// --------------------------------------------------------------
+left join
+LOAD
+    [Year],
+    [Net public investment EU],
+    [Net public investment UK],
+    [Net public investment USA]
+Resident [Net public investment];
+left join
+LOAD
+    [Year],
+    [Net private investment EU],
+    [Net private investment UK],
+    [Net private investment USA]
+Resident [Net private investment];
+left join
+LOAD
+    [Year],
+    [R&D expenditure China],
+    [R&D expenditure EU],
+    [R&D expenditure UK],
+    [R&D expenditure Japan],
+    [R&D expenditure USA]
+Resident [R&D expenditure];
+left join
+LOAD
+    [Year],
+    [Share of EU SMEs EU27]
+Resident [Share of EU SMEs];
+left Join
+LOAD
+    [Year],
+    [Global market share M_H_Tech China],
+   	[Global market share M_H_Tech EU],
+    [Global market share M_H_Tech Japan],
+    [Global market share M_H_Tech UK],
+    [Global market share M_H_Tech USA]
+Resident [Global market share in medium and high technology manufacturing];
+left join
+LOAD
+    [Year],
+    [Global market share H_Tech China],
+    [Global market share H_Tech EU],
+    [Global market share H_Tech Japan],
+    [Global market share H_Tech UK],
+    [Global market share H_Tech USA]
+Resident [Global market share in high technology exports];
+
+
+Drop Table [ALLMETRICS_Year_Employment_Integration];
+Drop Table [Net public investment], [Net private investment], [R&D expenditure], [Share of EU SMEs], [Global market share in medium and high technology manufacturing], [Global market share in high technology exports];
+
+
+
+
+
+
+///$tab 4.- Digital transition
+[Digital Economy and Society Index (DESI)]:
+LOAD
+    [x1val]		AS [Year],
+    [x2val]		AS [DESI HUM_CAP],
+    [x3val]		AS [DESI CON],
+    [x4val]		AS [DESI INT_DIG_TECH],
+    [x5val]		AS [DESI DIG_PUB_SER]
+
+where [x1val] <> 'YEARS';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_DESI.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Share of firms with e-sales]:
+LOAD
+    [x1val] 	AS [Year],
+    [x2val] 	AS [Share of firms with e-sales INT_SMEs],
+    [x3val] 	AS [Share of firms with e-sales INT_LAR_ENT],
+    [x4val] 	AS [Share of firms with e-sales EXT_SMEs],
+    [x5val] 	AS [Share of firms with e-sales EXT_LAR_ENT]
+
+where [x1val] <> 'Years' and [x1val] <> '2012';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_FIR_E-TRA.csv';
+
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of EU firms employing ICT]:
+LOAD
+    [x1val]		AS [Year],
+    [x2val]		AS [Share of EU firms employing ICT SMES],
+    [x3val]		AS [Share of EU firms employing ICT LAR_ENT]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_FIR_ICT_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of EU firms using big data]:
+LOAD
+    [x1val]					AS [ISO_code],
+    '10-49 persons'			AS [Share of EU firms using big data Variable],
+    [y1val]					AS [Share of EU firms using big data Data]
+
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+LOAD
+    [x1val]					AS [ISO_code],
+    '50-249 persons'		AS [Share of EU firms using big data Variable],
+    [y2val]					AS [Share of EU firms using big data Data]
+
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+LOAD
+    [x1val]					AS [ISO_code],
+    '250 persons or more'	AS [Share of EU firms using big data Variable],
+    [y3val]					AS [Share of EU firms using big data Data]
+    
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+ALLMETRICS_ISO_Employment_Integration_Economic_Digital:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate],
+// --------------------------------------------------------------
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids],
+// --------------------------------------------------------------
+    [Strategic dependency LastYear]
+Resident [ALLMETRICS_ISO_Employment_Integration_Economic];
+// --------------------------------------------------------------
+outer Join
+LOAD
+    [ISO_code],
+    [Share of EU firms using big data Variable],
+    [Share of EU firms using big data Data]
+Resident [Share of EU firms using big data];    
+    
+    
+Drop Table ALLMETRICS_ISO_Employment_Integration_Economic, [Share of EU firms using big data];
+
+
+
+
+
+
+ALLMETRICS_Year_Employment_Integration_Economic_Digital:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap],
+// --------------------------------------------------------------
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade],
+    [Price convergence EuArea],
+    [Price convergence Eu],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2],
+// --------------------------------------------------------------
+    [Net public investment EU],
+    [Net public investment UK],
+    [Net public investment USA],
+    [Net private investment EU],
+    [Net private investment UK],
+    [Net private investment USA],
+    [R&D expenditure China],
+    [R&D expenditure EU],
+    [R&D expenditure UK],
+    [R&D expenditure Japan],
+    [R&D expenditure USA],
+    [Share of EU SMEs EU27],
+    [Global market share M_H_Tech China],
+   	[Global market share M_H_Tech EU],
+    [Global market share M_H_Tech Japan],
+    [Global market share M_H_Tech UK],
+    [Global market share M_H_Tech USA],
+    [Global market share H_Tech China],
+    [Global market share H_Tech EU],
+    [Global market share H_Tech Japan],
+    [Global market share H_Tech UK],
+    [Global market share H_Tech USA]
+Resident [ALLMETRICS_Year_Employment_Integration_Economic];
+// --------------------------------------------------------------
+left Join
+LOAD
+    [Year],
+    [DESI HUM_CAP],
+    [DESI CON],
+    [DESI INT_DIG_TECH],
+    [DESI DIG_PUB_SER]
+Resident [Digital Economy and Society Index (DESI)];
+left Join
+LOAD
+    [Year],
+    [Share of firms with e-sales INT_SMEs],
+    [Share of firms with e-sales INT_LAR_ENT],
+    [Share of firms with e-sales EXT_SMEs],
+    [Share of firms with e-sales EXT_LAR_ENT]
+Resident [Share of firms with e-sales];
+left Join
+LOAD
+    [Year],
+    [Share of EU firms employing ICT SMES],
+    [Share of EU firms employing ICT LAR_ENT]
+Resident [Share of EU firms employing ICT];
+
+
+
+
+
+
+Drop Table [ALLMETRICS_Year_Employment_Integration_Economic];
+Drop Table [Digital Economy and Society Index (DESI)], [Share of firms with e-sales], [Share of EU firms employing ICT];
+
+
+
+
+
+
+
+
+
+///$tab 5.- Green transition
+[Circular material use rate]:
+LOAD
+    [x1val] 	AS [ISO_code],
+    [x2val] 	AS [Circular material rate LastYear],
+    [x3val] 	AS [Circular material rate Change]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_CIR_MAT_RATE.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Eco-innovation index]:
+LOAD
+    [x1val] 	AS [ISO_code],
+    [y1val] 	AS [Eco-innovation index LastYear],
+    [y2val]		AS [Eco-innovation index Change]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_ECO_INN.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Air emission intensity: greenhouse gases (GHG)]:
+LOAD
+    [x1val] 	AS [ISO_code],
+    [x2val] 	AS [Air emission intensity GHG LastYear],
+    [x3val] 	AS [Air emission intensity GHG Change]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_GRE_AIR_EMI.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";              
+
+
+
+[Air emission intensity: PM 2.5]:
+LOAD
+	[x1val] AS [ISO_code],
+	[x2val] AS [Air emission intensity PM 2.5]
+
+where x1val <> 'Country' and x1val <> 'UK' and x1val <> '';
+
+LIB CONNECT TO '$(text_connection)REST_GS_SI_AI_EMI.csv (ec2amaz-t6hn9ho_commdes_user1)';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+
+
+ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate],
+// --------------------------------------------------------------
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids],
+// --------------------------------------------------------------
+    [Strategic dependency LastYear],
+// --------------------------------------------------------------
+    [Share of EU firms using big data Variable],
+    [Share of EU firms using big data Data]
+Resident [ALLMETRICS_ISO_Employment_Integration_Economic_Digital];    
+// --------------------------------------------------------------
+left Join
+LOAD
+    [ISO_code],
+    [Circular material rate LastYear],
+    [Circular material rate Change]
+Resident [Circular material use rate];
+left join
+LOAD
+    [ISO_code],
+    [Eco-innovation index LastYear],
+    [Eco-innovation index Change]
+Resident [Eco-innovation index];
+left join
+LOAD
+    [ISO_code],
+    [Air emission intensity GHG LastYear],
+    [Air emission intensity GHG Change]
+Resident [Air emission intensity: greenhouse gases (GHG)];            
+left join
+LOAD
+	[ISO_code],
+	[Air emission intensity PM 2.5]
+Resident [Air emission intensity: PM 2.5];
+
+
+Drop Table ALLMETRICS_ISO_Employment_Integration_Economic_Digital, [Circular material use rate], [Eco-innovation index], [Air emission intensity: greenhouse gases (GHG)], [Air emission intensity: PM 2.5];
+
+
+
+
+[Recycling of municipal waste]:
+LOAD
+    [x1val] 	AS [Year],
+    'EU' 		AS [Recycling waste Variable],
+    [x2val] 	AS [Recycling waste Data]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_GRE_REC.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+Load  
+    [x1val] 	AS [Year],
+    'Min of MS' AS [Recycling waste Variable],
+    [x3val] 	AS [Recycling waste Data]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_GRE_REC.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+Load     
+    [x1val] 	AS [Year],
+    'Max of MS' AS [Recycling waste Variable],
+    [x4val] 	AS [Recycling waste Data]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_GRE_REC.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Resource efficiency-measures]:
+LOAD
+    [x1val] 	AS [Year],
+    [y1val] 	AS [Resource efficiency-measures Range_1],
+    [y2val] 	AS [Resource efficiency-measures Range_2],
+    [y3val] 	AS [Resource efficiency-measures Range_3],
+    [y4val] 	AS [Resource efficiency-measures Range_4]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_SME_RES_EFF.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val",
+	"y4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+[Green products or services]:
+LOAD
+    [x1val] 	AS [Year],
+    [y1val] 	AS [Green products or services Range_1],
+    [y2val] 	AS [Green products or services Range_2],
+    [y3val] 	AS [Green products or services Range_3],
+    [y4val] 	AS [Green products or services Range_4]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_SME_GRE_PRO.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val",
+	"y4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[EMAS organisations and sites]:
+LOAD
+    [x1val] 	AS [Year],
+    [x2val] 	AS [EMAS organisations],
+    [x3val] 	AS [EMAS sites]
+
+where [x1val] <> 'Year';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_EMAS_ORG_SIT.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[EMAS leading sectors]:
+LOAD
+    SubField([x1val],' "',1) 	AS [EMAS leading sectors],
+    [y1val] 					AS [EMAS leading sectors LastYear]
+
+where [x1val] <> 'Category';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_EMAS_LEAD_SEC.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[EU Ecolabel]:
+LOAD
+    [x1val] 	AS [EU Ecolabel Group],
+    [x2val]		AS [EU Ecolabel LastYear]
+
+where [x1val] <> 'PRODUCT GROUP';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GRE_TRA_ECO_LAB_PRO.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+
+
+
+
+ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap],
+// --------------------------------------------------------------
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade],
+    [Price convergence EuArea],
+    [Price convergence Eu],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2],
+// --------------------------------------------------------------
+    [Net public investment EU],
+    [Net public investment UK],
+    [Net public investment USA],
+    [Net private investment EU],
+    [Net private investment UK],
+    [Net private investment USA],
+    [R&D expenditure China],
+    [R&D expenditure EU],
+    [R&D expenditure UK],
+    [R&D expenditure Japan],
+    [R&D expenditure USA],
+    [Share of EU SMEs EU27],
+    [Global market share M_H_Tech China],
+   	[Global market share M_H_Tech EU],
+    [Global market share M_H_Tech Japan],
+    [Global market share M_H_Tech UK],
+    [Global market share M_H_Tech USA],
+    [Global market share H_Tech China],
+    [Global market share H_Tech EU],
+    [Global market share H_Tech Japan],
+    [Global market share H_Tech UK],
+    [Global market share H_Tech USA],
+// --------------------------------------------------------------
+    [DESI HUM_CAP],
+    [DESI CON],
+    [DESI INT_DIG_TECH],
+    [DESI DIG_PUB_SER],
+    [Share of firms with e-sales INT_SMEs],
+    [Share of firms with e-sales INT_LAR_ENT],
+    [Share of firms with e-sales EXT_SMEs],
+    [Share of firms with e-sales EXT_LAR_ENT],
+    [Share of EU firms employing ICT SMES],
+    [Share of EU firms employing ICT LAR_ENT]
+Resident [ALLMETRICS_Year_Employment_Integration_Economic_Digital];
+// --------------------------------------------------------------
+
+left Join
+LOAD
+    [Year],
+    [Recycling waste Variable],
+    [Recycling waste Data]
+Resident [Recycling of municipal waste];
+left join
+LOAD
+    [Year],
+    [Resource efficiency-measures Range_1],
+    [Resource efficiency-measures Range_2],
+    [Resource efficiency-measures Range_3],
+    [Resource efficiency-measures Range_4]
+Resident [Resource efficiency-measures];
+left join
+LOAD
+    [Year],
+    [Green products or services Range_1],
+    [Green products or services Range_2],
+    [Green products or services Range_3],
+    [Green products or services Range_4]
+Resident [Green products or services];
+left join
+LOAD
+    [Year],
+    [EMAS organisations],
+    [EMAS sites]
+Resident [EMAS organisations and sites];
+
+
+
+
+
+Drop Table ALLMETRICS_Year_Employment_Integration_Economic_Digital, [Recycling of municipal waste], [Resource efficiency-measures], [Green products or services], [EMAS organisations and sites];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///$tab exit script
+Exit Script;

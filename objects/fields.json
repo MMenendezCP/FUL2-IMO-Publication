@@ -1,0 +1,1115 @@
+[
+  {
+    "qName": "Accidents at work EU27",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Accidents at work Max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Accidents at work Min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Air emission intensity GHG Change",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Air emission intensity GHG LastYear",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Air emission intensity PM 2.5",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Circular material rate Change",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Circular material rate LastYear",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "DESI CON",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "DESI DIG_PUB_SER",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "DESI HUM_CAP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "DESI INT_DIG_TECH",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EMAS leading sectors",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "EMAS leading sectors"
+    ]
+  },
+  {
+    "qName": "EMAS leading sectors LastYear",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "EMAS leading sectors"
+    ]
+  },
+  {
+    "qName": "EMAS organisations",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EMAS sites",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU Ecolabel Group",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "EU Ecolabel"
+    ]
+  },
+  {
+    "qName": "EU Ecolabel LastYear",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "EU Ecolabel"
+    ]
+  },
+  {
+    "qName": "EU growth rates One_Earn_Two_Kids",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU growth rates Single_None_Kids",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU growth rates Two_Earn_Two_Kids",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in goods 1",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in goods 2",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in goods 3",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in services 1",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in services 2",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "EU lavels trade integration in services 3",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Eco-innovation index Change",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Eco-innovation index LastYear",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender EU27_F",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender EU27_Gap",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender EU27_M",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender Max_F",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender Max_M",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender Min_F",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment by gender Min_M",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment growth EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment growth Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment growth UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Employment growth USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Exports of goods LastYear",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Exports of goods OldDate",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "GDP per employed EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "GDP per employed Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "GDP per employed UK",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "GDP per employed USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share H_Tech China",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share H_Tech EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share H_Tech Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share H_Tech UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share H_Tech USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share M_H_Tech China",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share M_H_Tech EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share M_H_Tech Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share M_H_Tech UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Global market share M_H_Tech USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Green products or services Range_1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Green products or services Range_2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Green products or services Range_3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Green products or services Range_4",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Gross fixed capital EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Gross fixed capital Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Gross fixed capital UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Gross fixed capital USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "ISO_code",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "International comparison Variable",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "International comparison data",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net private investment EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net private investment UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net private investment USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net public investment EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net public investment UK",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Net public investment USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Number of persons employed Large",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Number of persons employed Medium_Sized",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Number of persons employed Micro",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Number of persons employed Small",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Price convergence Eu",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Price convergence EuArea",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Price convergence YearsRange1",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Price convergence YearsRange2",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "R&D expenditure China",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "R&D expenditure EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "R&D expenditure Japan",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "R&D expenditure UK",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "R&D expenditure USA",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Recycling waste Data",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Recycling waste Variable",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Resource efficiency-measures Range_1",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Resource efficiency-measures Range_2",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Resource efficiency-measures Range_3",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Resource efficiency-measures Range_4",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Self-employment Overall",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Self-employment Perm_Employees",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Self-employment Self_Employees",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Self-employment Temp_Employees",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of EU SMEs EU27",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of EU firms employing ICT LAR_ENT",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of EU firms employing ICT SMES",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of EU firms using big data Data",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of EU firms using big data Variable",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of firms with e-sales EXT_LAR_ENT",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of firms with e-sales EXT_SMEs",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of firms with e-sales INT_LAR_ENT",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of firms with e-sales INT_SMEs",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Share of high growth Share_EU27",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Strategic dependency LastYear",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_ISO_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Trade within the EU ExtraTrade",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Trade within the EU IntraTrade",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Industry China",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Industry EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Industry Japan",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Industry USA",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Services China",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Services EU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Services Japan",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value Added in Services USA",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value added by size Large",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value added by size Medium_Sized",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value added by size Micro",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Value added by size Small",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Work-related health problems EU27",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Work-related health problems Max",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Work-related health problems Min",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  },
+  {
+    "qName": "Year",
+    "qTags": [],
+    "qSrcTables": [
+      "ALLMETRICS_Year_Employment_Integration_Economic_Digital_Green"
+    ]
+  }
+]

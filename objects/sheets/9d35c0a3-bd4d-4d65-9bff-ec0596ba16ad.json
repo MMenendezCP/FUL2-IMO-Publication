@@ -1,0 +1,761 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "9d35c0a3-bd4d-4d65-9bff-ec0596ba16ad",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Digital transition - Share of firms with e-sales",
+      "description": ""
+    },
+    "rank": 29,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "YrPqnHj",
+        "type": "linechart",
+        "col": 0,
+        "row": 0,
+        "colspan": 24,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 100,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "YrPqnHj",
+          "qType": "linechart"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if ( not isnull([Share of firms with e-sales INT_SMEs]), [Year])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "kEQTCvr",
+                "othersLabel": "Others"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qLabel": "SMEs_intra-EU",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "[Share of firms with e-sales INT_SMEs]\r\n",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "TBF",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "[Share of firms with e-sales INT_LAR_ENT]",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='large entr._intra-EU'",
+                "autoSort": true,
+                "cId": "mPCGBj",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qLabel": "SMEs_extra-EU",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "[Share of firms with e-sales EXT_SMEs]",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "EgEggm",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            },
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "[Share of firms with e-sales EXT_LAR_ENT]",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 10,
+                  "qUseThou": 0
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "qLabelExpression": "='large entr._extra-EU'",
+                "autoSort": true,
+                "cId": "JAUzRRS",
+                "numFormatFromTemplate": true
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 17,
+              "qHeight": 500
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": [],
+          "dimRefLines": [],
+          "refLines2": []
+        },
+        "showTitles": true,
+        "title": "Share of firms e-trading across borders",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "components": [
+          {
+            "key": "line",
+            "style": {
+              "dataPointSize": 8,
+              "lineThickness": 1,
+              "lineType": "solid",
+              "lineCurve": "linear"
+            }
+          }
+        ],
+        "lineType": "line",
+        "stackedArea": false,
+        "separateStacking": true,
+        "orientation": "horizontal",
+        "scrollbar": "miniChart",
+        "scrollStartPos": 0,
+        "nullMode": "connect",
+        "dataPoint": {
+          "show": true,
+          "showLabels": "auto",
+          "showLineLabels": true,
+          "showBarLabels": false,
+          "bubbleScales": 70,
+          "displacement": "none"
+        },
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "color": {
+          "auto": true,
+          "mode": "primary",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": 6
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": true,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "point": {},
+          "box": {
+            "paletteColor": {
+              "color": "#e6e6e6",
+              "index": -1
+            }
+          },
+          "altLabel": "",
+          "byDimDef": {
+            "label": "",
+            "key": "=[IMO_DIG_TRA_FIR_E-TRA.Variable]",
+            "type": "expression"
+          },
+          "colorExpression": ""
+        },
+        "legend": {
+          "show": true,
+          "dock": "bottom",
+          "showTitle": false
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "auto",
+          "dock": "near",
+          "axisDisplayMode": "max",
+          "maxVisibleItems": 10
+        },
+        "preferContinuousAxis": true,
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 0.5,
+          "autoMinMax": false,
+          "minMax": "minMax",
+          "min": 0,
+          "max": 30,
+          "logarithmic": false
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "chart": {
+            "style": {
+              "size": "medium"
+            }
+          },
+          "title": "",
+          "description": ""
+        },
+        "visualization": "linechart",
+        "version": "1.8.17",
+        "showMiniChartForContinuousAxis": true,
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "barGrouping": {
+              "grouping": "grouped"
+            },
+            "measureAxes": [
+              {
+                "show": "labels",
+                "dock": "near",
+                "spacing": 0.5,
+                "autoMinMax": false,
+                "minMax": "minMax",
+                "min": 0,
+                "max": 30
+              },
+              {
+                "show": "all",
+                "dock": "far",
+                "spacing": 1,
+                "autoMinMax": true,
+                "minMax": "min",
+                "min": 0,
+                "max": 10
+              }
+            ],
+            "presentation": {
+              "visibleComponents": "points_box"
+            },
+            "gridlines": {
+              "auto": true,
+              "spacing": 2
+            },
+            "sorting": {
+              "autoSort": true
+            },
+            "qUndoExclude": {
+              "hashCode": 1104490875,
+              "qHyperCubeDef": {
+                "qDimensions": [
+                  {
+                    "qDef": {
+                      "qGrouping": "N",
+                      "qFieldDefs": [
+                        "IMO_DIG_TRA_FIR_E-TRA.Years_1"
+                      ],
+                      "qFieldLabels": [
+                        ""
+                      ],
+                      "qSortCriterias": [
+                        {
+                          "qSortByNumeric": 1,
+                          "qSortByAscii": 1,
+                          "qSortByLoadOrder": 1,
+                          "qExpression": {
+                            "qv": "Min( total <[IMO_DIG_TRA_FIR_E-TRA.Years_1]> Aggr( if(Sum([IMO_DIG_TRA_FIR_E-TRA.data])=0,null(),Sum([IMO_DIG_TRA_FIR_E-TRA.data])), [IMO_DIG_TRA_FIR_E-TRA.Years_1], [=[IMO_DIG_TRA_FIR_E-TRA.Variable]]] ), 0 )"
+                          }
+                        }
+                      ],
+                      "qNumberPresentations": [],
+                      "qActiveField": 0,
+                      "autoSort": true,
+                      "cId": "JhpbuX",
+                      "othersLabel": "Others"
+                    },
+                    "qOtherTotalSpec": {
+                      "qOtherMode": "OTHER_OFF",
+                      "qOtherCounted": {
+                        "qv": "10"
+                      },
+                      "qOtherLimit": {
+                        "qv": "0"
+                      },
+                      "qOtherLimitMode": "OTHER_GE_LIMIT",
+                      "qForceBadValueKeeping": true,
+                      "qApplyEvenWhenPossiblyWrongResult": true,
+                      "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                      "qTotalMode": "TOTAL_OFF",
+                      "qReferencedExpression": {}
+                    },
+                    "qOtherLabel": {
+                      "qv": "Others"
+                    },
+                    "qTotalLabel": {},
+                    "qCalcCond": {},
+                    "qAttributeExpressions": [
+                      {
+                        "qExpression": "Min( total <[IMO_DIG_TRA_FIR_E-TRA.Years_1]> Aggr( if(Sum([IMO_DIG_TRA_FIR_E-TRA.data])=0,null(),Sum([IMO_DIG_TRA_FIR_E-TRA.data])), [IMO_DIG_TRA_FIR_E-TRA.Years_1], [=[IMO_DIG_TRA_FIR_E-TRA.Variable]]] ), 0 )",
+                        "id": "minBoxValue"
+                      },
+                      {
+                        "qExpression": "Max( total <[IMO_DIG_TRA_FIR_E-TRA.Years_1]> Aggr( if(Sum([IMO_DIG_TRA_FIR_E-TRA.data])=0,null(),Sum([IMO_DIG_TRA_FIR_E-TRA.data])), [IMO_DIG_TRA_FIR_E-TRA.Years_1], [=[IMO_DIG_TRA_FIR_E-TRA.Variable]]] ), 1 )",
+                        "id": "maxBoxValue"
+                      }
+                    ],
+                    "qAttributeDimensions": [],
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    }
+                  },
+                  {
+                    "qDef": {
+                      "qGrouping": "N",
+                      "qFieldDefs": [
+                        "=[IMO_DIG_TRA_FIR_E-TRA.Variable]"
+                      ],
+                      "qFieldLabels": [
+                        ""
+                      ],
+                      "qSortCriterias": [
+                        {
+                          "qSortByNumeric": 1,
+                          "qSortByAscii": 1,
+                          "qSortByLoadOrder": 1,
+                          "qExpression": {}
+                        }
+                      ],
+                      "qNumberPresentations": [],
+                      "qActiveField": 0,
+                      "autoSort": true,
+                      "cId": "WSYkm",
+                      "othersLabel": "Others"
+                    },
+                    "qOtherTotalSpec": {
+                      "qOtherMode": "OTHER_OFF",
+                      "qOtherCounted": {
+                        "qv": "10"
+                      },
+                      "qOtherLimit": {
+                        "qv": "0"
+                      },
+                      "qOtherLimitMode": "OTHER_GE_LIMIT",
+                      "qForceBadValueKeeping": true,
+                      "qApplyEvenWhenPossiblyWrongResult": true,
+                      "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                      "qTotalMode": "TOTAL_OFF",
+                      "qReferencedExpression": {}
+                    },
+                    "qOtherLabel": {
+                      "qv": "Others"
+                    },
+                    "qTotalLabel": {},
+                    "qCalcCond": {},
+                    "qAttributeExpressions": [],
+                    "qAttributeDimensions": [
+                      {
+                        "qDef": "=[IMO_DIG_TRA_FIR_E-TRA.Variable]",
+                        "qSortBy": {
+                          "qSortByAscii": 1,
+                          "qExpression": {}
+                        },
+                        "qAttribute": true,
+                        "id": "colorByAlternative",
+                        "label": ""
+                      }
+                    ],
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    }
+                  }
+                ],
+                "qMeasures": [
+                  {
+                    "qDef": {
+                      "qTags": [],
+                      "qGrouping": "N",
+                      "qDef": "if(Sum([IMO_DIG_TRA_FIR_E-TRA.data])=0,null(),Sum([IMO_DIG_TRA_FIR_E-TRA.data]))",
+                      "qNumFormat": {
+                        "qType": "U",
+                        "qnDec": 10,
+                        "qUseThou": 0
+                      },
+                      "qAccumulate": 0,
+                      "qActiveExpression": 0,
+                      "qExpressions": [],
+                      "autoSort": true,
+                      "cId": "ehRhDEz",
+                      "numFormatFromTemplate": true
+                    },
+                    "qSortBy": {
+                      "qSortByNumeric": -1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    },
+                    "qAttributeExpressions": [],
+                    "qAttributeDimensions": [],
+                    "qCalcCond": {},
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    },
+                    "qTrendLines": [],
+                    "qMiniChartDef": {
+                      "qSortBy": {
+                        "qExpression": {}
+                      },
+                      "qOtherTotalSpec": {
+                        "qOtherMode": "OTHER_OFF",
+                        "qOtherCounted": {},
+                        "qOtherLimit": {},
+                        "qOtherLimitMode": "OTHER_GT_LIMIT",
+                        "qForceBadValueKeeping": true,
+                        "qApplyEvenWhenPossiblyWrongResult": true,
+                        "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                        "qTotalMode": "TOTAL_OFF",
+                        "qReferencedExpression": {}
+                      },
+                      "qMaxNumberPoints": -1,
+                      "qAttributeExpressions": []
+                    }
+                  }
+                ],
+                "qInterColumnSortOrder": [
+                  0,
+                  2,
+                  1
+                ],
+                "qSuppressMissing": true,
+                "qInitialDataFetch": [
+                  {
+                    "qLeft": 0,
+                    "qTop": 0,
+                    "qWidth": 0,
+                    "qHeight": 0
+                  }
+                ],
+                "qReductionMode": "N",
+                "qMode": "K",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qAlwaysFullyExpanded": true,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": [],
+                "qLayoutExclude": {
+                  "qHyperCubeDef": {
+                    "qDimensions": [],
+                    "qMeasures": [],
+                    "qInterColumnSortOrder": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4
+                    ],
+                    "qInitialDataFetch": [],
+                    "qReductionMode": "N",
+                    "qMode": "S",
+                    "qPseudoDimPos": -1,
+                    "qNoOfLeftDims": -1,
+                    "qMaxStackedCells": 5000,
+                    "qCalcCond": {},
+                    "qTitle": {},
+                    "qCalcCondition": {
+                      "qCond": {},
+                      "qMsg": {}
+                    },
+                    "qColumnOrder": [],
+                    "qExpansionState": [],
+                    "qDynamicScript": []
+                  }
+                }
+              }
+            }
+          },
+          "quarantine": {}
+        }
+      },
+      "qChildren": []
+    }
+  ]
+}

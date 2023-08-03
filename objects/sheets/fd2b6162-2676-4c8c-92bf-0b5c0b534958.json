@@ -1,0 +1,591 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "fd2b6162-2676-4c8c-92bf-0b5c0b534958",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Social indicators - International comparison",
+      "description": ""
+    },
+    "rank": 8,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "QbKv",
+        "type": "distributionplot",
+        "col": 0,
+        "row": 0,
+        "colspan": 12,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 50,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "QbKv",
+          "qType": "distributionplot"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=[International comparison Variable]"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "KJJqymw",
+                "othersLabel": "Otros"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Otros"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "$$hashKey": "object:576059"
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if ( not isnull([International comparison data]), [Year])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "FTNTySy",
+                "othersLabel": "Otros"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Otros"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "$$hashKey": "object:576060"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "Sum([International comparison data])",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "# ##0",
+                  "qDec": ".",
+                  "qThou": " "
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "cUxxmyJ",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            1,
+            2,
+            0
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "K",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": []
+        },
+        "showTitles": true,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "components": null,
+        "orientation": "vertical",
+        "presentation": {
+          "visibleComponents": "points_box"
+        },
+        "gridlines": {
+          "auto": false,
+          "spacing": 3
+        },
+        "dataPoint": {
+          "bubbleScales": 50,
+          "displacement": "none"
+        },
+        "color": {
+          "point": {
+            "auto": false,
+            "mode": "byDimension",
+            "useBaseColors": "off",
+            "paletteColor": {
+              "index": 6
+            },
+            "useDimColVal": true,
+            "persistent": true,
+            "expressionIsColor": true,
+            "measureScheme": "sg",
+            "reverseScheme": false,
+            "dimensionScheme": "12",
+            "autoMinMax": true,
+            "measureMin": 0,
+            "measureMax": 10,
+            "expression": {
+              "qValueExpression": {
+                "qExpr": "if(Var='Two earners couple, two kids', green(),\r\n \tif (Var='One earners couple, two kids', yellow(),blue()))"
+              }
+            },
+            "altLabel": "[International comparison Variable]",
+            "byDimDef": {
+              "label": "[International comparison Variable]",
+              "key": "=[International comparison Variable]",
+              "type": "expression"
+            }
+          },
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "expressionLabel": "",
+          "box": {
+            "paletteColor": {
+              "color": "#efefef",
+              "index": -1
+            }
+          }
+        },
+        "legend": {
+          "show": true,
+          "dock": "bottom",
+          "showTitle": false
+        },
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": false,
+          "minMax": "minMax",
+          "min": 0,
+          "max": 100000
+        },
+        "dimensionAxis": {
+          "show": "labels",
+          "label": "auto",
+          "dock": "near"
+        },
+        "visualization": "distributionplot",
+        "version": "0.25.12",
+        "sorting": {
+          "autoSort": false,
+          "elementId": "distplot-exp-max",
+          "sortCriteria": {
+            "sortByExpression": 0,
+            "sortByAscii": 0,
+            "sortByNumeric": 0,
+            "sortByLoadOrder": 1
+          },
+          "expression": {
+            "qValueExpression": {
+              "qExpr": "Max( total <[IMO_GES_SOC_NET_EARN_prueba1.Years_Households]> Aggr( Sum([IMO_GES_SOC_NET_EARN_prueba1.data_tmp]), [IMO_GES_SOC_NET_EARN_prueba1.Years_Households], [Var] ), 1 )"
+            }
+          }
+        },
+        "qUndoExclude": {
+          "hashCode": 1884404197,
+          "qHyperCubeDef": {
+            "qDimensions": [
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=if ( not isnull([International comparison data]), [Year])"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "FTNTySy",
+                  "othersLabel": "Otros"
+                },
+                "qNullSuppression": true,
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Otros"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [
+                  {
+                    "qExpression": "Min( total <[=if ( not isnull([International comparison data]]), [Year]])]> Aggr( Sum([International comparison data]), [=if ( not isnull([International comparison data]]), [Year]])], [=[International comparison Variable]]] ), 0 )",
+                    "id": "minBoxValue"
+                  },
+                  {
+                    "qExpression": "Max( total <[=if ( not isnull([International comparison data]]), [Year]])]> Aggr( Sum([International comparison data]), [=if ( not isnull([International comparison data]]), [Year]])], [=[International comparison Variable]]] ), 1 )",
+                    "id": "maxBoxValue"
+                  }
+                ],
+                "qAttributeDimensions": [],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "$$hashKey": "object:576060"
+              },
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=[International comparison Variable]"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": 1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "KJJqymw",
+                  "othersLabel": "Otros"
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Otros"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [
+                  {
+                    "qDef": "=[International comparison Variable]",
+                    "qSortBy": {
+                      "qSortByAscii": 1,
+                      "qExpression": {}
+                    },
+                    "qAttribute": true,
+                    "id": "colorByAlternative",
+                    "label": "[International comparison Variable]"
+                  }
+                ],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "$$hashKey": "object:576059"
+              }
+            ],
+            "qMeasures": [
+              {
+                "qDef": {
+                  "qTags": [],
+                  "qGrouping": "N",
+                  "qDef": "Sum([International comparison data])",
+                  "qNumFormat": {
+                    "qType": "F",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qFmt": "# ##0",
+                    "qDec": ".",
+                    "qThou": " "
+                  },
+                  "qAccumulate": 0,
+                  "qActiveExpression": 0,
+                  "qExpressions": [],
+                  "autoSort": true,
+                  "cId": "cUxxmyJ",
+                  "numFormatFromTemplate": true,
+                  "isCustomFormatted": false
+                },
+                "qSortBy": {
+                  "qSortByNumeric": -1,
+                  "qSortByLoadOrder": 1,
+                  "qExpression": {}
+                },
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [],
+                "qCalcCond": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qTrendLines": [],
+                "qMiniChartDef": {
+                  "qSortBy": {
+                    "qExpression": {}
+                  },
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {},
+                    "qOtherLimit": {},
+                    "qOtherLimitMode": "OTHER_GT_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qMaxNumberPoints": -1,
+                  "qAttributeExpressions": []
+                }
+              }
+            ],
+            "qInterColumnSortOrder": [
+              0,
+              2,
+              1
+            ],
+            "qSuppressMissing": true,
+            "qInitialDataFetch": [],
+            "qReductionMode": "N",
+            "qMode": "K",
+            "qPseudoDimPos": -1,
+            "qNoOfLeftDims": -1,
+            "qAlwaysFullyExpanded": true,
+            "qMaxStackedCells": 5000,
+            "qCalcCond": {},
+            "qTitle": {},
+            "qCalcCondition": {
+              "qCond": {},
+              "qMsg": {}
+            },
+            "qColumnOrder": [],
+            "qExpansionState": [],
+            "qDynamicScript": [],
+            "qLayoutExclude": {
+              "qHyperCubeDef": {
+                "qDimensions": [],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [],
+                "qInitialDataFetch": [],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": []
+              }
+            }
+          }
+        }
+      },
+      "qChildren": []
+    }
+  ]
+}

@@ -1,0 +1,667 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "b84fc53e-dc95-49f0-b4eb-c82669f7477a",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Green transition - Recycling of municipal waste",
+      "description": ""
+    },
+    "rank": 36,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "MbJuXgh",
+        "type": "distributionplot",
+        "col": 0,
+        "row": 0,
+        "colspan": 21,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 87.5,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "MbJuXgh",
+          "qType": "distributionplot"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=[Recycling waste Variable]"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "jrrzwN",
+                "othersLabel": "Autres"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Autres"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if ( not isnull([Recycling waste Data]), [Year])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "FqgjF",
+                "othersLabel": "Autres"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Autres"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "othersLabel": "Others"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qLabel": "EU",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "Sum([Recycling waste Data])",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "KGwywZp",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            1,
+            2,
+            0
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "K",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": [],
+          "refLines2": [],
+          "dimRefLines": []
+        },
+        "showTitles": true,
+        "title": "Green Recycling",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "components": null,
+        "orientation": "vertical",
+        "presentation": {
+          "visibleComponents": "points_box"
+        },
+        "gridlines": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "bubbleScales": 50,
+          "displacement": "none",
+          "show": false,
+          "showLineLabels": false,
+          "showBarLabels": false
+        },
+        "color": {
+          "point": {
+            "auto": false,
+            "mode": "byDimension",
+            "useBaseColors": "off",
+            "paletteColor": {
+              "index": 6
+            },
+            "useDimColVal": true,
+            "persistent": true,
+            "expressionIsColor": true,
+            "measureScheme": "sg",
+            "reverseScheme": false,
+            "dimensionScheme": "12",
+            "autoMinMax": true,
+            "measureMin": 0,
+            "measureMax": 10,
+            "expressionLabel": "",
+            "altLabel": "[Recycling waste Variable]",
+            "byDimDef": {
+              "label": "[Recycling waste Variable]",
+              "key": "=[Recycling waste Variable]",
+              "type": "expression"
+            },
+            "expression": {
+              "qValueExpression": {
+                "qExpr": "If(IMO_GRE_TRA_GRE_REC.Variable='EU','#5B9BD5',if(IMO_GRE_TRA_GRE_REC.Variable='Min of MS','#FA9542',if(IMO_GRE_TRA_GRE_REC.Variable='Max of MS','#9CB95A')))"
+              }
+            }
+          },
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "expressionLabel": "",
+          "box": {
+            "paletteColor": {
+              "color": "#f0efed",
+              "index": -1
+            }
+          },
+          "useMeasureGradient": true
+        },
+        "legend": {
+          "show": true,
+          "dock": "bottom",
+          "showTitle": false
+        },
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 0.5,
+          "autoMinMax": false,
+          "minMax": "minMax",
+          "min": 0,
+          "max": 0.8
+        },
+        "dimensionAxis": {
+          "show": "labels",
+          "label": "auto",
+          "dock": "near",
+          "continuousAuto": true,
+          "axisDisplayMode": "auto",
+          "maxVisibleItems": 10
+        },
+        "visualization": "distributionplot",
+        "version": "1.8.17",
+        "sorting": {
+          "autoSort": false,
+          "sortCriteria": {
+            "sortByExpression": 0,
+            "sortByAscii": 1,
+            "sortByNumeric": 1,
+            "sortByLoadOrder": 1
+          },
+          "expression": {
+            "qValueExpression": {
+              "qExpr": "Max( total <[=if ( not isnull([Recycling waste Data]]), [Year]])]> Aggr( Sum([Recycling waste Data]), [=if ( not isnull([Recycling waste Data]]), [Year]])], [=[Recycling waste Variable]]] ), 1 )"
+            }
+          }
+        },
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "components": [],
+            "barGrouping": {
+              "grouping": "grouped"
+            },
+            "scrollStartPos": 0,
+            "nullMode": "gap",
+            "preferContinuousAxis": true,
+            "showMiniChartForContinuousAxis": true,
+            "measureAxes": [
+              {
+                "show": "none",
+                "dock": "near",
+                "spacing": 0.5,
+                "autoMinMax": false,
+                "minMax": "minMax",
+                "min": 0,
+                "max": 0.8
+              },
+              {
+                "show": "labels",
+                "dock": "near",
+                "spacing": 0.5,
+                "autoMinMax": false,
+                "minMax": "minMax",
+                "min": 0,
+                "max": 0.8
+              }
+            ],
+            "tooltip": {
+              "auto": true,
+              "hideBasic": false,
+              "chart": {
+                "style": {
+                  "size": "medium"
+                }
+              },
+              "title": "",
+              "description": ""
+            }
+          },
+          "quarantine": {}
+        },
+        "qUndoExclude": {
+          "hashCode": 614667249,
+          "qHyperCubeDef": {
+            "qDimensions": [
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=if ( not isnull([Recycling waste Data]), [Year])"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": 1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "FqgjF",
+                  "othersLabel": "Autres"
+                },
+                "qNullSuppression": true,
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Autres"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [
+                  {
+                    "qExpression": "Min( total <[=if ( not isnull([Recycling waste Data]]), [Year]])]> Aggr( Sum([Recycling waste Data]), [=if ( not isnull([Recycling waste Data]]), [Year]])], [=[Recycling waste Variable]]] ), 0 )",
+                    "id": "minBoxValue"
+                  },
+                  {
+                    "qExpression": "Max( total <[=if ( not isnull([Recycling waste Data]]), [Year]])]> Aggr( Sum([Recycling waste Data]), [=if ( not isnull([Recycling waste Data]]), [Year]])], [=[Recycling waste Variable]]] ), 1 )",
+                    "id": "maxBoxValue"
+                  }
+                ],
+                "qAttributeDimensions": [],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "othersLabel": "Others"
+              },
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=[Recycling waste Variable]"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": 1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "jrrzwN",
+                  "othersLabel": "Autres"
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Autres"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [
+                  {
+                    "qDef": "=[Recycling waste Variable]",
+                    "qSortBy": {
+                      "qSortByAscii": 1,
+                      "qExpression": {}
+                    },
+                    "qAttribute": true,
+                    "id": "colorByAlternative",
+                    "label": "[Recycling waste Variable]"
+                  }
+                ],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                }
+              }
+            ],
+            "qMeasures": [
+              {
+                "qDef": {
+                  "qLabel": "EU",
+                  "qTags": [],
+                  "qGrouping": "N",
+                  "qDef": "Sum([Recycling waste Data])",
+                  "qNumFormat": {
+                    "qType": "F",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qFmt": "0%",
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qAccumulate": 0,
+                  "qActiveExpression": 0,
+                  "qExpressions": [],
+                  "autoSort": true,
+                  "cId": "KGwywZp",
+                  "numFormatFromTemplate": true,
+                  "isCustomFormatted": false
+                },
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [],
+                "qCalcCond": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qTrendLines": [],
+                "qMiniChartDef": {
+                  "qSortBy": {
+                    "qExpression": {}
+                  },
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {},
+                    "qOtherLimit": {},
+                    "qOtherLimitMode": "OTHER_GT_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qMaxNumberPoints": -1,
+                  "qAttributeExpressions": []
+                }
+              }
+            ],
+            "qInterColumnSortOrder": [
+              0,
+              2,
+              1
+            ],
+            "qSuppressMissing": true,
+            "qInitialDataFetch": [
+              {
+                "qLeft": 0,
+                "qTop": 0,
+                "qWidth": 0,
+                "qHeight": 0
+              }
+            ],
+            "qReductionMode": "N",
+            "qMode": "K",
+            "qPseudoDimPos": -1,
+            "qNoOfLeftDims": -1,
+            "qAlwaysFullyExpanded": true,
+            "qMaxStackedCells": 5000,
+            "qCalcCond": {},
+            "qTitle": {},
+            "qCalcCondition": {
+              "qCond": {},
+              "qMsg": {}
+            },
+            "qColumnOrder": [],
+            "qExpansionState": [],
+            "qDynamicScript": [],
+            "qLayoutExclude": {
+              "qHyperCubeDef": {
+                "qDimensions": [],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "qInitialDataFetch": [],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": []
+              }
+            }
+          }
+        }
+      },
+      "qChildren": []
+    }
+  ]
+}

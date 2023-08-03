@@ -1,0 +1,686 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "ba20c870-8865-41c7-8c50-9c2ea30dd3a9",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Digital transition - Share of EU firms using big data",
+      "description": ""
+    },
+    "rank": 31,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "GmVwD",
+        "type": "distributionplot",
+        "col": 0,
+        "row": 0,
+        "colspan": 22,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 91.66666666666666,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "GmVwD",
+          "qType": "distributionplot"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=[Share of EU firms using big data Variable]"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "EbgebD",
+                "othersLabel": "Others"
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "$$hashKey": "object:20062"
+            },
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if ( not isnull([Share of EU firms using big data Data]), [ISO_code])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "wLSem",
+                "othersLabel": "Others"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "$$hashKey": "object:20063"
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "[Share of EU firms using big data Data]",
+                "qNumFormat": {
+                  "qType": "U",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "cqNJTDu",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            1,
+            2,
+            0
+          ],
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 0,
+              "qHeight": 0
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "K",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qAlwaysFullyExpanded": true,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": [],
+          "refLines2": [],
+          "dimRefLines": []
+        },
+        "showTitles": true,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "components": null,
+        "orientation": "vertical",
+        "presentation": {
+          "visibleComponents": "points_box"
+        },
+        "gridlines": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "bubbleScales": 85,
+          "displacement": "none",
+          "show": false,
+          "showLineLabels": false,
+          "showBarLabels": true
+        },
+        "color": {
+          "point": {
+            "auto": false,
+            "mode": "byDimension",
+            "useBaseColors": "off",
+            "paletteColor": {
+              "index": 6
+            },
+            "useDimColVal": true,
+            "persistent": true,
+            "expressionIsColor": true,
+            "measureScheme": "sg",
+            "reverseScheme": false,
+            "dimensionScheme": "12",
+            "autoMinMax": true,
+            "measureMin": 0,
+            "measureMax": 10,
+            "expressionLabel": "",
+            "altLabel": "[Share of EU firms using big data Variable]",
+            "byDimDef": {
+              "label": "[Share of EU firms using big data Variable]",
+              "key": "=[Share of EU firms using big data Variable]",
+              "type": "expression"
+            }
+          },
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "expressionLabel": "",
+          "box": {
+            "paletteColor": {
+              "color": "#e6e6e6",
+              "index": -1
+            }
+          },
+          "useMeasureGradient": true
+        },
+        "legend": {
+          "show": true,
+          "dock": "bottom",
+          "showTitle": false
+        },
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 0.5,
+          "autoMinMax": true,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "dimensionAxis": {
+          "show": "labels",
+          "label": "auto",
+          "dock": "near",
+          "continuousAuto": true,
+          "axisDisplayMode": "max",
+          "maxVisibleItems": 10
+        },
+        "visualization": "distributionplot",
+        "version": "1.8.17",
+        "sorting": {
+          "autoSort": false,
+          "sortCriteria": {
+            "sortByExpression": -1,
+            "sortByAscii": 0,
+            "sortByNumeric": 0,
+            "sortByLoadOrder": 1
+          },
+          "expression": {
+            "qValueExpression": {
+              "qExpr": "\r\nif ([ISO_code] = 'EU', 5000, Max( total <[=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])]> Aggr( [Share of EU firms using big data Data], [=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])], [=[Share of EU firms using big data Variable]]] ), 1 ))\n"
+            }
+          }
+        },
+        "qLayoutExclude": {
+          "disabled": {
+            "qExtendsId": "",
+            "components": [
+              {
+                "key": "bar",
+                "style": {
+                  "strokeWidth": "none",
+                  "strokeColor": {
+                    "index": -1,
+                    "color": "#205891"
+                  },
+                  "width": 0.7
+                }
+              },
+              {
+                "key": "line",
+                "style": {
+                  "dataPointSize": 9,
+                  "lineThickness": 1,
+                  "lineType": "solid",
+                  "lineCurve": "linear"
+                }
+              }
+            ],
+            "barGrouping": {
+              "grouping": "grouped"
+            },
+            "scrollStartPos": 0,
+            "nullMode": "gap",
+            "preferContinuousAxis": true,
+            "showMiniChartForContinuousAxis": true,
+            "measureAxes": [
+              {
+                "show": "labels",
+                "dock": "near",
+                "spacing": 0.5,
+                "autoMinMax": true,
+                "minMax": "min",
+                "min": 0,
+                "max": 10
+              },
+              {
+                "show": "none",
+                "dock": "far",
+                "spacing": 1,
+                "autoMinMax": false,
+                "minMax": "minMax",
+                "min": 0,
+                "max": 60
+              }
+            ],
+            "tooltip": {
+              "auto": true,
+              "hideBasic": false,
+              "chart": {
+                "style": {
+                  "size": "medium"
+                }
+              },
+              "title": "",
+              "description": ""
+            }
+          },
+          "quarantine": {}
+        },
+        "qUndoExclude": {
+          "hashCode": -1541615043,
+          "qHyperCubeDef": {
+            "qDimensions": [
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=if ( not isnull([Share of EU firms using big data Data]), [ISO_code])"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByLoadOrder": 1,
+                      "qSortByExpression": -1,
+                      "qExpression": {
+                        "qv": "\r\nif ([ISO_code] = 'EU', 5000, Max( total <[=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])]> Aggr( [Share of EU firms using big data Data], [=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])], [=[Share of EU firms using big data Variable]]] ), 1 ))\n"
+                      }
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "wLSem",
+                  "othersLabel": "Others"
+                },
+                "qNullSuppression": true,
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Others"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [
+                  {
+                    "qExpression": "Min( total <[=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])]> Aggr( [Share of EU firms using big data Data], [=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])], [=[Share of EU firms using big data Variable]]] ), 0 )",
+                    "id": "minBoxValue"
+                  },
+                  {
+                    "qExpression": "Max( total <[=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])]> Aggr( [Share of EU firms using big data Data], [=if ( not isnull([Share of EU firms using big data Data]]), [ISO_code]])], [=[Share of EU firms using big data Variable]]] ), 1 )",
+                    "id": "maxBoxValue"
+                  }
+                ],
+                "qAttributeDimensions": [],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "$$hashKey": "object:20063"
+              },
+              {
+                "qDef": {
+                  "qGrouping": "N",
+                  "qFieldDefs": [
+                    "=[Share of EU firms using big data Variable]"
+                  ],
+                  "qFieldLabels": [
+                    ""
+                  ],
+                  "qSortCriterias": [
+                    {
+                      "qSortByNumeric": 1,
+                      "qSortByAscii": 1,
+                      "qSortByLoadOrder": 1,
+                      "qExpression": {}
+                    }
+                  ],
+                  "qNumberPresentations": [],
+                  "qActiveField": 0,
+                  "autoSort": true,
+                  "cId": "EbgebD",
+                  "othersLabel": "Others"
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {
+                    "qv": "10"
+                  },
+                  "qOtherLimit": {
+                    "qv": "0"
+                  },
+                  "qOtherLimitMode": "OTHER_GE_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qOtherLabel": {
+                  "qv": "Others"
+                },
+                "qTotalLabel": {},
+                "qCalcCond": {},
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [
+                  {
+                    "qDef": "=[Share of EU firms using big data Variable]",
+                    "qSortBy": {
+                      "qSortByAscii": 1,
+                      "qExpression": {}
+                    },
+                    "qAttribute": true,
+                    "id": "colorByAlternative",
+                    "label": "[Share of EU firms using big data Variable]"
+                  }
+                ],
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "$$hashKey": "object:20062"
+              }
+            ],
+            "qMeasures": [
+              {
+                "qDef": {
+                  "qTags": [],
+                  "qGrouping": "N",
+                  "qDef": "[Share of EU firms using big data Data]",
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 2,
+                    "qUseThou": 0,
+                    "qDec": ".",
+                    "qThou": ","
+                  },
+                  "qAccumulate": 0,
+                  "qActiveExpression": 0,
+                  "qExpressions": [],
+                  "autoSort": true,
+                  "cId": "cqNJTDu",
+                  "numFormatFromTemplate": true,
+                  "isCustomFormatted": false
+                },
+                "qSortBy": {
+                  "qSortByNumeric": -1,
+                  "qSortByLoadOrder": 1,
+                  "qExpression": {}
+                },
+                "qAttributeExpressions": [],
+                "qAttributeDimensions": [],
+                "qCalcCond": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qTrendLines": [],
+                "qMiniChartDef": {
+                  "qSortBy": {
+                    "qExpression": {}
+                  },
+                  "qOtherTotalSpec": {
+                    "qOtherMode": "OTHER_OFF",
+                    "qOtherCounted": {},
+                    "qOtherLimit": {},
+                    "qOtherLimitMode": "OTHER_GT_LIMIT",
+                    "qForceBadValueKeeping": true,
+                    "qApplyEvenWhenPossiblyWrongResult": true,
+                    "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                    "qTotalMode": "TOTAL_OFF",
+                    "qReferencedExpression": {}
+                  },
+                  "qMaxNumberPoints": -1,
+                  "qAttributeExpressions": []
+                }
+              }
+            ],
+            "qInterColumnSortOrder": [
+              0,
+              2,
+              1
+            ],
+            "qSuppressMissing": true,
+            "qInitialDataFetch": [
+              {
+                "qLeft": 0,
+                "qTop": 0,
+                "qWidth": 0,
+                "qHeight": 0
+              }
+            ],
+            "qReductionMode": "N",
+            "qMode": "K",
+            "qPseudoDimPos": -1,
+            "qNoOfLeftDims": -1,
+            "qAlwaysFullyExpanded": true,
+            "qMaxStackedCells": 5000,
+            "qCalcCond": {},
+            "qTitle": {},
+            "qCalcCondition": {
+              "qCond": {},
+              "qMsg": {}
+            },
+            "qColumnOrder": [],
+            "qExpansionState": [],
+            "qDynamicScript": [],
+            "qLayoutExclude": {
+              "qHyperCubeDef": {
+                "qDimensions": [],
+                "qMeasures": [],
+                "qInterColumnSortOrder": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "qInitialDataFetch": [],
+                "qReductionMode": "N",
+                "qMode": "S",
+                "qPseudoDimPos": -1,
+                "qNoOfLeftDims": -1,
+                "qMaxStackedCells": 5000,
+                "qCalcCond": {},
+                "qTitle": {},
+                "qCalcCondition": {
+                  "qCond": {},
+                  "qMsg": {}
+                },
+                "qColumnOrder": [],
+                "qExpansionState": [],
+                "qDynamicScript": []
+              }
+            }
+          }
+        }
+      },
+      "qChildren": []
+    }
+  ]
+}

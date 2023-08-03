@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "9f750c1d-4789-45b0-882c-06c230d9dfcf",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "SysLastYear",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2022",
+  "qIsScriptCreated": true
+}

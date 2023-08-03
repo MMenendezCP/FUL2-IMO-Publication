@@ -1,0 +1,438 @@
+///$tab 1.- Grow, employment and social indicators
+[Value Added in Industry]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value Added in Industry China],
+    [x3val]					AS [Value Added in Industry EU],
+    [x4val]					AS [Value Added in Industry Japan],
+    [x5val]					AS [Value Added in Industry USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_IND.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Value Added in Services]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value Added in Services China],
+    [x3val]					AS [Value Added in Services EU],
+    [x4val]					AS [Value Added in Services Japan],
+    [x5val]					AS [Value Added in Services USA]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_SER.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Value added by size]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Value added by size Micro],
+    [x3val]					AS [Value added by size Small],
+   	[x4val]					AS [Value added by size Medium_Sized],
+    [x5val]					AS [Value added by size Large]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_VAL_ENT.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+[GDP per employed]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [GDP per employed EU],
+    [x3val]					AS [GDP per employed UK],
+    [x4val]					AS [GDP per employed USA],
+    [x5val]					AS [GDP per employed Japan]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_PRODUC_EMPL.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of high growth]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Share of high growth Share_EU27]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_GROW_ENT.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Gross fixed capital formation]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Gross fixed capital Japan],
+    [x3val]					AS [Gross fixed capital UK],
+    [x4val]					AS [Gross fixed capital USA],
+    [x5val]					AS [Gross fixed capital EU]
+
+where [x1val] <> 'Years-Quarter';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_GROSS_FIX_FORM.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Employment growth]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Employment growth EU],
+    [x3val]					AS [Employment growth USA],
+    [x4val]					AS [Employment growth Japan],
+    [x5val]					AS [Employment growth UK]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_EMPL_GROW.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Number of persons employed]:
+LOAD
+    [x1val]					AS [Year],
+    [x2val]					AS [Number of persons employed Micro],
+    [x3val]					AS [Number of persons employed Small],
+    [x4val]					AS [Number of persons employed Medium_Sized],
+    [x5val]					AS [Number of persons employed Large]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_EMPL_ENT_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Self-employment]:
+LOAD
+    [x1val]						AS [Year],
+    [x2val]						AS [Self-employment Overall],
+    [x3val]						AS [Self-employment Perm_Employees],
+    [x4val]						AS [Self-employment Temp_Employees],
+    [x5val]						AS [Self-employment Self_Employees]
+
+where [x1val] <> 'Years-Quarter';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_ST_EMPL.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[International comparison]:
+LOAD
+    [x1val]							AS [Year],
+    '2 earner couple, 2 kids'		AS [International comparison Variable],
+    [x2val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+Load
+    [x1val]							AS [Year],
+    '1 earner couple, 2 kids'		AS [International comparison Variable],
+    [x3val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+Load
+    [x1val]							AS [Year],
+    'Single, no kids'				AS [International comparison Variable],
+    [x4val]							AS [International comparison data]
+
+where [x1val] <> 'Years-households';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x1val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[EU growth rates]:
+LOAD
+    [x7val]							AS [ISO_code], 
+    [x8val]							AS [EU growth rates Two_Earn_Two_Kids],
+    [x9val]							AS [EU growth rates One_Earn_Two_Kids],
+    [x10val]						AS [EU growth rates Single_None_Kids]
+
+where [x7val] <> 'EU271'and [x8val] <> 'Two earners couple, two kids' and [x7val]<>'' ;
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_NET_EARN.csv';
+
+SQL SELECT 
+	"x7val",
+	"x8val",
+	"x9val",
+	"x10val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Accidents at work]:
+LOAD
+    [x1val]							AS [Year], 
+    [x2val]							AS [Accidents at work EU27],
+    [x3val]							AS [Accidents at work Min],
+    [x4val]							AS [Accidents at work Max]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_HEALTH_SAFE_1.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Work-related health problems]:
+LOAD
+    [x1val]							AS [Year],
+    [x2val]							AS [Work-related health problems EU27],
+    [x3val]							AS [Work-related health problems Min],
+    [x4val]							AS [Work-related health problems Max]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_HEALTH_SAFE_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Employment by gender]:
+LOAD
+    [x1val]							AS [Year],
+    [x2val]							AS [Employment by gender EU27_M],
+    [x3val]							AS [Employment by gender Min_M],
+    [x4val]							AS [Employment by gender Max_M],
+    [x5val]							AS [Employment by gender EU27_F],
+    [x6val]							AS [Employment by gender Min_F],
+    [x7val]							AS [Employment by gender Max_F],
+    [x8val]							AS [Employment by gender EU27_Gap]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_GES_SOC_GENDER.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val",
+	"x6val",
+	"x7val",
+	"x8val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+ALLMETRICS_Year_Employment:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA]
+Resident [Value Added in Industry];
+left join
+LOAD
+    [Year],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA]
+Resident [Value Added in Services];
+outer join
+LOAD
+    [Year],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large]
+Resident [Value added by size];
+outer join
+LOAD
+    [Year],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan]
+Resident [GDP per employed];
+left join
+LOAD
+    [Year],
+    [Share of high growth Share_EU27]
+Resident [Share of high growth];
+outer join
+LOAD
+    [Year],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU]
+Resident [Gross fixed capital formation];
+outer join
+LOAD
+    [Year],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK]
+Resident [Employment growth];
+left join
+LOAD
+    [Year],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large]
+Resident [Number of persons employed];
+outer join
+LOAD
+    [Year],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees]
+Resident [Self-employment];
+outer join
+LOAD
+    [Year],
+    [International comparison Variable],
+    [International comparison data]
+Resident [International comparison];
+left join
+LOAD
+    [Year],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max]
+Resident [Accidents at work];
+left join
+LOAD
+    [Year],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max]
+Resident [Work-related health problems];
+left join
+LOAD
+    [Year],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap]
+Resident [Employment by gender];
+
+
+
+
+Drop Table [Value Added in Industry], [Value Added in Services], [Value added by size], [GDP per employed], [Share of high growth], [Gross fixed capital formation], [Employment growth], [Number of persons employed];
+Drop Table [Self-employment], [International comparison], [Accidents at work], [Work-related health problems], [Employment by gender];

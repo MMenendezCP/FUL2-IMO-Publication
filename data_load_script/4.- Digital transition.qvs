@@ -1,0 +1,262 @@
+///$tab 4.- Digital transition
+[Digital Economy and Society Index (DESI)]:
+LOAD
+    [x1val]		AS [Year],
+    [x2val]		AS [DESI HUM_CAP],
+    [x3val]		AS [DESI CON],
+    [x4val]		AS [DESI INT_DIG_TECH],
+    [x5val]		AS [DESI DIG_PUB_SER]
+
+where [x1val] <> 'YEARS';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_DESI.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Share of firms with e-sales]:
+LOAD
+    [x1val] 	AS [Year],
+    [x2val] 	AS [Share of firms with e-sales INT_SMEs],
+    [x3val] 	AS [Share of firms with e-sales INT_LAR_ENT],
+    [x4val] 	AS [Share of firms with e-sales EXT_SMEs],
+    [x5val] 	AS [Share of firms with e-sales EXT_LAR_ENT]
+
+where [x1val] <> 'Years' and [x1val] <> '2012';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_FIR_E-TRA.csv';
+
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of EU firms employing ICT]:
+LOAD
+    [x1val]		AS [Year],
+    [x2val]		AS [Share of EU firms employing ICT SMES],
+    [x3val]		AS [Share of EU firms employing ICT LAR_ENT]
+
+where [x1val] <> 'Years';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_FIR_ICT_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Share of EU firms using big data]:
+LOAD
+    [x1val]					AS [ISO_code],
+    '10-49 persons'			AS [Share of EU firms using big data Variable],
+    [y1val]					AS [Share of EU firms using big data Data]
+
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+LOAD
+    [x1val]					AS [ISO_code],
+    '50-249 persons'		AS [Share of EU firms using big data Variable],
+    [y2val]					AS [Share of EU firms using big data Data]
+
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y2val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+LOAD
+    [x1val]					AS [ISO_code],
+    '250 persons or more'	AS [Share of EU firms using big data Variable],
+    [y3val]					AS [Share of EU firms using big data Data]
+    
+where [x1val] <> 'SIZEN_R2';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_DIG_TRA_BIG_DAT_FIR.csv';
+
+SQL SELECT 
+	"x1val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+ALLMETRICS_ISO_Employment_Integration_Economic_Digital:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate],
+// --------------------------------------------------------------
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids],
+// --------------------------------------------------------------
+    [Strategic dependency LastYear]
+Resident [ALLMETRICS_ISO_Employment_Integration_Economic];
+// --------------------------------------------------------------
+outer Join
+LOAD
+    [ISO_code],
+    [Share of EU firms using big data Variable],
+    [Share of EU firms using big data Data]
+Resident [Share of EU firms using big data];    
+    
+    
+Drop Table ALLMETRICS_ISO_Employment_Integration_Economic, [Share of EU firms using big data];
+
+
+
+
+
+
+ALLMETRICS_Year_Employment_Integration_Economic_Digital:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap],
+// --------------------------------------------------------------
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade],
+    [Price convergence EuArea],
+    [Price convergence Eu],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2],
+// --------------------------------------------------------------
+    [Net public investment EU],
+    [Net public investment UK],
+    [Net public investment USA],
+    [Net private investment EU],
+    [Net private investment UK],
+    [Net private investment USA],
+    [R&D expenditure China],
+    [R&D expenditure EU],
+    [R&D expenditure UK],
+    [R&D expenditure Japan],
+    [R&D expenditure USA],
+    [Share of EU SMEs EU27],
+    [Global market share M_H_Tech China],
+   	[Global market share M_H_Tech EU],
+    [Global market share M_H_Tech Japan],
+    [Global market share M_H_Tech UK],
+    [Global market share M_H_Tech USA],
+    [Global market share H_Tech China],
+    [Global market share H_Tech EU],
+    [Global market share H_Tech Japan],
+    [Global market share H_Tech UK],
+    [Global market share H_Tech USA]
+Resident [ALLMETRICS_Year_Employment_Integration_Economic];
+// --------------------------------------------------------------
+left Join
+LOAD
+    [Year],
+    [DESI HUM_CAP],
+    [DESI CON],
+    [DESI INT_DIG_TECH],
+    [DESI DIG_PUB_SER]
+Resident [Digital Economy and Society Index (DESI)];
+left Join
+LOAD
+    [Year],
+    [Share of firms with e-sales INT_SMEs],
+    [Share of firms with e-sales INT_LAR_ENT],
+    [Share of firms with e-sales EXT_SMEs],
+    [Share of firms with e-sales EXT_LAR_ENT]
+Resident [Share of firms with e-sales];
+left Join
+LOAD
+    [Year],
+    [Share of EU firms employing ICT SMES],
+    [Share of EU firms employing ICT LAR_ENT]
+Resident [Share of EU firms employing ICT];
+
+
+
+
+
+
+Drop Table [ALLMETRICS_Year_Employment_Integration_Economic];
+Drop Table [Digital Economy and Society Index (DESI)], [Share of firms with e-sales], [Share of EU firms employing ICT];

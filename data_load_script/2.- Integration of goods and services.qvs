@@ -1,0 +1,231 @@
+///$tab 2.- Integration of goods and services
+[EU trade integration in goods]:
+LOAD
+	[x1val] 				AS [ISO_code],
+	num([y1val]) 			AS [EU lavels trade integration in goods 1], 
+	num([y2val]) 			AS [EU lavels trade integration in goods 2],
+	num([y3val]) 			AS [EU lavels trade integration in goods 3]
+
+where [x1val] <> 'year' and [x1val] <> 'Avg' and [x1val] <> 'UK';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-MO_TRA_IN_GOO_AND_SERV_INT_GOO_1.csv';
+
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[EU trade integration in services]:
+LOAD
+	[x1val] 				AS [ISO_code],
+	num([y1val]) 			AS [EU lavels trade integration in services 1], 
+	num([y2val]) 			AS [EU lavels trade integration in services 2], 
+	num([y3val]) 			AS [EU lavels trade integration in services 3] 
+    
+where [x1val] <> 'year' and [x1val] <> '' and [x1val] <> 'Avg' and [x1val] <> 'UK';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3.csv';
+
+SQL SELECT 
+	"x1val",
+	"y1val",
+	"y2val",
+	"y3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Exports of goods]:
+LOAD
+    [x1val] 				AS [ISO_code],
+    [x2val] 				AS [Exports of goods LastYear],
+    [y1val] 				AS [Exports of goods OldDate]
+
+where [x1val] <> 'Country';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_INT_EU_EXP.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"y1val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Trade within the EU]:
+LOAD
+    [x3val] 				AS [Year],
+    [x4val] 				AS [Trade within the EU ExtraTrade],
+    [x5val] 				AS [Trade within the EU IntraTrade]
+
+where [x3val] <> '_month';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_INT_EU_TRA.csv';
+
+SQL SELECT 
+	"x3val",
+	"x4val",
+	"x5val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+
+[Price convergence: general trend]:
+LOAD
+    [x1val] 				AS [Year],
+    [x2val] 				AS [Price convergence EuArea],
+    [x3val] 				AS [Price convergence Eu]
+
+where [x1val] <> 'GEO/TIME1' and [x1val] <> 'GEO/TIME';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_PRI_CON_1.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+
+
+[Price convergence: average growth rates]:
+LOAD
+    [x1val] 				AS [Year],
+    [x2val] 				AS [Price convergence YearsRange1],
+    [x3val] 				AS [Price convergence YearsRange2]
+
+where [x1val] <> 'Range';
+
+LIB CONNECT TO '$(text_connection)REST_PUB-IMO_IGS_PRI_CON_2.csv';
+
+SQL SELECT 
+	"x1val",
+	"x2val",
+	"x3val"
+FROM CSV (header on, delimiter ",", quote """") "CSV_source"; 
+
+
+
+
+
+ALLMETRICS_ISO_Employment_Integration:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in goods 1],
+	[EU lavels trade integration in goods 2],
+	[EU lavels trade integration in goods 3]
+Resident [EU trade integration in goods];
+left join
+LOAD
+	[ISO_code],
+	[EU lavels trade integration in services 1], 
+	[EU lavels trade integration in services 2], 
+	[EU lavels trade integration in services 3]
+Resident [EU trade integration in services];
+outer join
+LOAD
+    [ISO_code],
+    [Exports of goods LastYear],
+    [Exports of goods OldDate]
+Resident [Exports of goods];
+// --------------------------------------------------------------
+// Only one table from section (1)
+left Join
+LOAD
+    [ISO_code],
+    [EU growth rates Two_Earn_Two_Kids],
+    [EU growth rates One_Earn_Two_Kids],
+    [EU growth rates Single_None_Kids]
+Resident [EU growth rates];
+
+
+Drop Table [EU growth rates], [EU trade integration in goods], [EU trade integration in services], [Exports of goods];
+
+
+ALLMETRICS_Year_Employment_Integration:
+// --------------------------------------------------------------
+NoConcatenate
+LOAD
+    [Year],
+    [Value Added in Industry China],
+    [Value Added in Industry EU],
+    [Value Added in Industry Japan],
+    [Value Added in Industry USA],
+    [Value Added in Services China],
+    [Value Added in Services EU],
+    [Value Added in Services Japan],
+    [Value Added in Services USA],
+    [Value added by size Micro],
+    [Value added by size Small],
+   	[Value added by size Medium_Sized],
+    [Value added by size Large],
+    [GDP per employed EU],
+    [GDP per employed UK],
+    [GDP per employed USA],
+    [GDP per employed Japan],
+    [Share of high growth Share_EU27],
+    [Gross fixed capital Japan],
+    [Gross fixed capital UK],
+    [Gross fixed capital USA],
+    [Gross fixed capital EU],
+    [Employment growth EU],
+    [Employment growth USA],
+    [Employment growth Japan],
+    [Employment growth UK],
+    [Number of persons employed Micro],
+    [Number of persons employed Small],
+    [Number of persons employed Medium_Sized],
+    [Number of persons employed Large],
+    [Self-employment Overall],
+    [Self-employment Perm_Employees],
+    [Self-employment Temp_Employees],
+    [Self-employment Self_Employees],
+    [International comparison Variable],
+    [International comparison data],
+    [Accidents at work EU27],
+    [Accidents at work Min],
+    [Accidents at work Max],
+    [Work-related health problems EU27],
+    [Work-related health problems Min],
+    [Work-related health problems Max],
+    [Employment by gender EU27_M],
+    [Employment by gender Min_M],
+    [Employment by gender Max_M],
+    [Employment by gender EU27_F],
+    [Employment by gender Min_F],
+    [Employment by gender Max_F],
+    [Employment by gender EU27_Gap]
+Resident [ALLMETRICS_Year_Employment];
+// --------------------------------------------------------------
+outer Join
+LOAD
+    [Year],
+    [Trade within the EU ExtraTrade],
+    [Trade within the EU IntraTrade]
+Resident [Trade within the EU];
+outer join
+LOAD
+    [Year],
+    [Price convergence EuArea],
+    [Price convergence Eu]
+Resident [Price convergence: general trend];
+outer join
+LOAD
+    [Year],
+    [Price convergence YearsRange1],
+    [Price convergence YearsRange2]
+Resident [Price convergence: average growth rates];    
+    
+
+Drop Table ALLMETRICS_Year_Employment, [Trade within the EU], [Price convergence: general trend], [Price convergence: average growth rates];

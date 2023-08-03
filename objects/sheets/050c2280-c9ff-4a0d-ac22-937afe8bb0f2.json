@@ -1,0 +1,360 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "050c2280-c9ff-4a0d-ac22-937afe8bb0f2",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Integration of goods - EU trade integration in services (change)",
+      "description": ""
+    },
+    "rank": 16,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "qWHdPU",
+        "type": "barchart",
+        "col": 0,
+        "row": 0,
+        "colspan": 16,
+        "rowspan": 6,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 66.66666666666666,
+          "height": 50
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "qWHdPU",
+          "qType": "barchart"
+        },
+        "qMetaDef": {},
+        "qHyperCubeDef": {
+          "qDimensions": [
+            {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "=if (not isnull([EU lavels trade integration in services 1]) or not isnull([EU lavels trade integration in services 3]), [ISO_code])\r\n\n/*\n\n=if([Trade in goods and services]='EU27_2020',null(),[Trade in goods and services])"
+                ],
+                "qFieldLabels": [
+                  ""
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "pJchsj",
+                "othersLabel": "Others"
+              },
+              "qNullSuppression": true,
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": "10"
+                },
+                "qOtherLimit": {
+                  "qv": "0"
+                },
+                "qOtherLimitMode": "OTHER_GE_LIMIT",
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {}
+              },
+              "qOtherLabel": {
+                "qv": "Others"
+              },
+              "qTotalLabel": {},
+              "qCalcCond": {},
+              "qAttributeExpressions": [],
+              "qAttributeDimensions": [],
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              }
+            }
+          ],
+          "qMeasures": [
+            {
+              "qDef": {
+                "qLabel": "EU trade integration in services (change)",
+                "qTags": [],
+                "qGrouping": "N",
+                "qDef": "=if(\r\n\tsum([EU lavels trade integration in services 1])=0 or sum([EU lavels trade integration in services 3])=0\n    ,'',\n    (sum([EU lavels trade integration in services 1])/sum([EU lavels trade integration in services 3]))-1)",
+                "qNumFormat": {
+                  "qType": "F",
+                  "qnDec": 2,
+                  "qUseThou": 0,
+                  "qFmt": "0%",
+                  "qDec": ".",
+                  "qThou": ","
+                },
+                "qAccumulate": 0,
+                "qActiveExpression": 0,
+                "qExpressions": [],
+                "autoSort": true,
+                "cId": "gLLj",
+                "numFormatFromTemplate": true,
+                "isCustomFormatted": false
+              },
+              "qSortBy": {
+                "qSortByNumeric": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              },
+              "qAttributeExpressions": [
+                {
+                  "qExpression": "If((MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) > 0.041, '#87aa7d', \r\nIf((MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) > 0.02 and (MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) < 0.041, '#d0c131', '#b95545'))\n\n",
+                  "qAttribute": true,
+                  "qNumFormat": {
+                    "qType": "U",
+                    "qnDec": 10,
+                    "qUseThou": 0
+                  },
+                  "id": "colorByExpression"
+                }
+              ],
+              "qAttributeDimensions": [],
+              "qCalcCond": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qTrendLines": [],
+              "qMiniChartDef": {
+                "qSortBy": {
+                  "qExpression": {}
+                },
+                "qOtherTotalSpec": {
+                  "qOtherMode": "OTHER_OFF",
+                  "qOtherCounted": {},
+                  "qOtherLimit": {},
+                  "qOtherLimitMode": "OTHER_GT_LIMIT",
+                  "qForceBadValueKeeping": true,
+                  "qApplyEvenWhenPossiblyWrongResult": true,
+                  "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                  "qTotalMode": "TOTAL_OFF",
+                  "qReferencedExpression": {}
+                },
+                "qMaxNumberPoints": -1,
+                "qAttributeExpressions": []
+              }
+            }
+          ],
+          "qInterColumnSortOrder": [
+            1,
+            0
+          ],
+          "qSuppressZero": true,
+          "qSuppressMissing": true,
+          "qInitialDataFetch": [
+            {
+              "qLeft": 0,
+              "qTop": 0,
+              "qWidth": 17,
+              "qHeight": 500
+            }
+          ],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": [],
+          "qLayoutExclude": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "script": "",
+        "refLine": {
+          "refLines": [
+            {
+              "show": true,
+              "label": "EU Avg",
+              "paletteColor": {
+                "index": -1,
+                "color": "#333333"
+              },
+              "refLineExpr": {
+                "value": {
+                  "qValueExpression": {
+                    "qExpr": "=//0.028\r\nAvg((AVGIndic3_2019-AVGIndic3_2018)/AVGIndic3_2018)/100"
+                  }
+                },
+                "label": {
+                  "qStringExpression": {
+                    "qExpr": "=//0.028\r\nAvg((AVGIndic3_2019-AVGIndic3_2018)/AVGIndic3_2018)/100"
+                  }
+                }
+              },
+              "cId": "aWUjW"
+            }
+          ],
+          "dimRefLines": []
+        },
+        "showTitles": true,
+        "title": "Indicator [4]: EU trade integration in services (change)",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showDisclaimer": true,
+        "barGrouping": {
+          "grouping": "grouped"
+        },
+        "orientation": "vertical",
+        "scrollbar": "miniChart",
+        "scrollStartPos": 0,
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "showLabels": true,
+          "showSegmentLabels": false,
+          "showTotalLabels": true
+        },
+        "color": {
+          "auto": true,
+          "mode": "byExpression",
+          "formatting": {
+            "numFormatFromTemplate": true
+          },
+          "useBaseColors": "off",
+          "paletteColor": {
+            "index": 6
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": true,
+          "persistent": false,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "colorExpression": "If((MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) > 0.041, '#87aa7d', \r\nIf((MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) > 0.02 and (MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2019-MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018)/(MO_TRA_IN_GOO_AND_SERV_INT_SERV_3_2018) < 0.041, '#d0c131', '#b95545'))\n\n"
+        },
+        "legend": {
+          "show": true,
+          "dock": "auto",
+          "showTitle": true
+        },
+        "dimensionAxis": {
+          "continuousAuto": true,
+          "show": "labels",
+          "label": "horizontal",
+          "dock": "near",
+          "axisDisplayMode": "auto",
+          "maxVisibleItems": 10
+        },
+        "preferContinuousAxis": true,
+        "measureAxis": {
+          "show": "labels",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": true,
+          "minMax": "min",
+          "min": 0,
+          "max": 10
+        },
+        "tooltip": {
+          "auto": true,
+          "hideBasic": false,
+          "chart": {
+            "style": {
+              "size": "medium"
+            }
+          },
+          "data": {
+            "qHyperCubeDef": {
+              "qDimensions": [],
+              "qMeasures": [],
+              "qInterColumnSortOrder": [],
+              "qInitialDataFetch": [],
+              "qReductionMode": "N",
+              "qMode": "S",
+              "qPseudoDimPos": -1,
+              "qNoOfLeftDims": -1,
+              "qMaxStackedCells": 5000,
+              "qCalcCond": {},
+              "qTitle": {},
+              "qCalcCondition": {
+                "qCond": {},
+                "qMsg": {}
+              },
+              "qColumnOrder": [],
+              "qExpansionState": [],
+              "qDynamicScript": []
+            }
+          }
+        },
+        "visualization": "barchart",
+        "version": "1.28.0",
+        "components": [],
+        "showMiniChartForContinuousAxis": true
+      },
+      "qChildren": []
+    }
+  ]
+}
